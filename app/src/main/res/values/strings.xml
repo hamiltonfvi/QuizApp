@@ -33,12 +33,17 @@
     <string name="question_seven_response_b">Response B</string>
     <string name="question_seven_response_c">Response C</string>
     <string name="question_eight_response_a">Response A</string>
-    <string name="question_eiqht_response_b">Response B</string>
+    <string name="question_eight_response_b">Response B</string>
     <string name="question_eight_response_c">Response C</string>
+    <string name="question_eight_response_d">Response D</string>
+    <string name="question_eight_response_e">Response E</string>
+    <string name="question_eight_response_f">Response F</string>
     <string name="question_nine_response_a">Response A</string>
     <string name="question_nine_response_b">Response B</string>
     <string name="question_nine_response_c">Response C</string>
-    <string name="question_ten_response_a">Response A</string>
-    <string name="question_ten_response_b">Response B</string>
-    <string name="question_ten_response_c">Response C</string>
+    <string name="results">Results</string>
+    <string name="reset">Reset</string>
+    <string name="filling">Just to fill this space</string>
+    <string name="winner">You are a Winner!!</string>
+    <string name="loser">Oh! it seems you just lost, better luck next time</string>
 </resources>
