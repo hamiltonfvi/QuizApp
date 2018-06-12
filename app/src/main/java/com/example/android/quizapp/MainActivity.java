@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private static final String Final_Score = "savedScore";
-    int score = 0;
     EditText quizPlayer;
     TextView questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix;
     TextView questionSeven, questionEight, questionNine, questionTen;
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     CheckBox responseNineA, responseNineB, responseNineC;
     RadioButton responseThreeA, responseThreeB, responseThreeC;
     Switch responseTen;
-
+    private int score = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void calculatePoints(View v) {
+    public void quizResults(View view) {
 
         //One point for a corrected answer in question one
         if (responseOneA.isChecked()) {
@@ -124,11 +123,21 @@ public class MainActivity extends AppCompatActivity {
         if (responseEightA.isChecked()) {
             score = score + 1;
         }
-    }
+        //One point for a corrected answer in question nine
+        if (responseNineA.isChecked()) {
+            score = score + 1;
+        }
 
-    public void quizResults(int score) {
+        //One point for a corrected answer in question ten
+        if (responseTen.isChecked()) {
+            score = score + 1;
+        }
+
+        //Display the winner or the loser
         if (score >= 5) {
             Toast.makeText(this, getString(R.string.winner), Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, getString(R.string.loser), Toast.LENGTH_LONG).show();
         }
     }
 }
