@@ -45,5 +45,7 @@
     <string name="reset">Reset</string>
     <string name="filling">Just to fill this space</string>
     <string name="winner">You are a Winner!!</string>
-    <string name="loser">Oh! it seems you just lost, better luck next time</string>
+    <string name="loser">It seems you just lost. Better luck next time</string>
+    <string name="score">Your Score is:</string>
+    <string name="mandatory_name">Sorry but the name of the participant is mandatory</string>
 </resources>
