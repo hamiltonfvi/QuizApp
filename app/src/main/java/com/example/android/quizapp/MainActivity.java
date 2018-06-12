@@ -147,11 +147,10 @@ public class MainActivity extends AppCompatActivity {
             final MediaPlayer ring = MediaPlayer.create(this, R.raw.lost);
             ring.start();
         }
-
-        score = 0;
     }
 
     public void onReset(View view) {
+        score = 0;
         if (responseOneA.isChecked())
             responseOneA.toggle();
         if (responseOneB.isChecked())
