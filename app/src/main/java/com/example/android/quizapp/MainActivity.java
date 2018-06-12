@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private static final String Final_Score = "savedScore";
+    int score = 0;
     EditText quizPlayer;
     TextView questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix;
     TextView questionSeven, questionEight, questionNine, questionTen;
@@ -20,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
     CheckBox responseFourA, responseFourB, responseFourC;
     CheckBox responseFiveA, responseFiveB, responseFiveC, responseSixA, responseSixB, responseSixC;
     CheckBox responseSevenA, responseSevenB, responseSevenC, responseEightA, responseEightB;
-    CheckBox responseEightC, responseNineA, responseNineB, responseNineC;
+    CheckBox responseEightC, responseEightD, responseEightE, responseEightF;
+    CheckBox responseNineA, responseNineB, responseNineC;
     RadioButton responseThreeA, responseThreeB, responseThreeC;
     Switch responseTen;
-    private int score;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         quizPlayer = (EditText) findViewById(R.id.quiz_name);
 
+        //initiate TextViews
         questionOne = (TextView) findViewById(R.id.question_one);
         questionTwo = (TextView) findViewById(R.id.question_two);
         questionThree = (TextView) findViewById(R.id.question_three);
@@ -43,9 +46,8 @@ public class MainActivity extends AppCompatActivity {
         questionNine = (TextView) findViewById(R.id.question_nine);
         questionTen = (TextView) findViewById(R.id.question_ten);
 
+        //initiate Checkboxes
         responseOneA = (CheckBox) findViewById(R.id.question_one_response_a);
-        Boolean CheckBox = responseOneA.isChecked();
-
         responseOneB = (CheckBox) findViewById(R.id.question_one_response_b);
         responseOneC = (CheckBox) findViewById(R.id.question_one_response_c);
 
@@ -76,45 +78,57 @@ public class MainActivity extends AppCompatActivity {
         responseEightA = (CheckBox) findViewById(R.id.question_eight_response_a);
         responseEightB = (CheckBox) findViewById(R.id.question_eight_response_b);
         responseEightC = (CheckBox) findViewById(R.id.question_eight_response_c);
+        responseEightD = (CheckBox) findViewById(R.id.question_eight_response_d);
+        responseEightE = (CheckBox) findViewById(R.id.question_eight_response_e);
+        responseEightF = (CheckBox) findViewById(R.id.question_eight_response_f);
 
         responseNineA = (CheckBox) findViewById(R.id.question_nine_response_a);
         responseNineB = (CheckBox) findViewById(R.id.question_nine_response_b);
         responseNineC = (CheckBox) findViewById(R.id.question_nine_response_c);
 
         responseTen = (Switch) findViewById(R.id.question_ten_switch);
+
     }
 
-    /**
-     * Calculates de user's Score
-     * @param score
-     */
-    public void displayScore(int score) {
-        if (score > 10) {
-            Toast.makeText(this, getString(R.string.winner), Toast.LENGTH_LONG).show();
+    void calculatePoints(View v) {
+
+        //One point for a corrected answer in question one
+        if (responseOneA.isChecked()) {
+            score = score + 1;
+        }
+        //One point for a corrected answer in question two
+        if (responseTwoA.isChecked()) {
+            score = score + 1;
+        }
+        //One point for a corrected answer in question three
+        if (responseThreeA.isChecked()) {
+            score = score + 1;
+        }
+        //One point for a corrected answer in question four
+        if (responseFourA.isChecked()) {
+            score = score + 1;
+        }
+        //One point for a corrected answer in question five
+        if (responseFiveA.isChecked()) {
+            score = score + 1;
+        }
+        //One point for a corrected answer in question six
+        if (responseSixA.isChecked()) {
+            score = score + 1;
+        }
+        //One point for a corrected answer in question seven
+        if (responseSevenA.isChecked()) {
+            score = score + 1;
+        }
+        //One point for a corrected answer in question eight
+        if (responseEightA.isChecked()) {
+            score = score + 1;
         }
     }
 
-    /**
-     * Highlights the Checkbox if question is incorrect
-     * @param editedCheckBox is the CheckBox to be highlighted
-     */
-    public void highlightCheckBox (CheckBox editedCheckBox) {
-        CheckBox highlightCheckBox = (CheckBox) editedCheckBox;
-        highlightCheckBox.setTextColor(Color.WHITE);
-        highlightCheckBox.setBackgroundColor(Color.parseColor("#2196F3"));
-    }
-
-    /**
-     *
-     * @param editedRadioButton is the RadioButton to be highlighted
-     */
-    public void highlightRadioButton(RadioButton editedRadioButton){
-        RadioButton highlightRadioButton = (RadioButton) editedRadioButton;
-        highlightRadioButton.setTextColor(Color.WHITE);
-        highlightRadioButton.setBackgroundColor(Color.parseColor("#2196F3"));
-    }
-
-    public void onReset(View view) {
-        score = 0;
+    public void quizResults(int score) {
+        if (score >= 5) {
+            Toast.makeText(this, getString(R.string.winner), Toast.LENGTH_LONG).show();
+        }
     }
 }
