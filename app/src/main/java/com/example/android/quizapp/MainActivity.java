@@ -92,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
 
         String name = quizPlayer.getText().toString();
 
+        //Username is mandatory
+        if ((quizPlayer.getText().toString().trim().isEmpty())) {
+            Toast.makeText(getApplicationContext(), "User name is empty", Toast.LENGTH_SHORT).show();
+        }
+
         //One point for a corrected answer in question one
         if (responseOneA.isChecked()) {
             score = score + 1;
@@ -147,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
             final MediaPlayer ring = MediaPlayer.create(this, R.raw.lost);
             ring.start();
         }
+
+        score = 0;
     }
 
     public void onReset(View view) {
