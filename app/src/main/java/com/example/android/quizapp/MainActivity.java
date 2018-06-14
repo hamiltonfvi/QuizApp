@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         //Resets score
         score = 0;
 
-        //Resets Name
+        //Resets Name of the user
         quizPlayer.setText("");
 
         //Unchecked everything on this view
