@@ -164,11 +164,12 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
             String scoreMessage = getString(R.string.loser) + "\n" + name + "\n" + getString(R.string.score) + " " + score;
-            Toast.makeText(this, scoreMessage , Toast.LENGTH_LONG).show();
+            Toast.makeText(this, scoreMessage, Toast.LENGTH_LONG).show();
             final MediaPlayer ring = MediaPlayer.create(this, R.raw.lost);
             ring.start();
         }
 
+        //Prevents adding points to score if the user keep pressing Results button
         score = 0;
     }
 
@@ -176,6 +177,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Resets score
         score = 0;
+
+        //Resets Name
+        quizPlayer.setText("");
 
         //Unchecked everything on this view
         if (responseOneA.isChecked())
