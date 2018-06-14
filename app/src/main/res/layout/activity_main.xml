@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollview01"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_16dp"
+        android:background="@drawable/backrepeat"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/dimen_32dp"
+            android:text="@string/intro"
+            android:textColor="@color/text_color_intro"
+            android:textSize="@dimen/text_size_intro"
+            android:textStyle="bold"
+            app:fontFamily="@font/audiowide" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/dimen_16dp"
+            android:text="@string/intro_2"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingEnd="@dimen/dimen_16dp"
+            android:paddingLeft="@dimen/dimen_16dp"
+            android:paddingRight="@dimen/dimen_16dp"
+            android:paddingStart="@dimen/dimen_16dp"
+            android:text="@string/good_luck"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/quiz_name"

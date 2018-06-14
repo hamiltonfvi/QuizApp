@@ -10,15 +10,6 @@ import android.widget.RadioButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.media.MediaPlayer;
-import android.widget.Button;
-import android.widget.PopupWindow;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.view.ViewGroup.LayoutParams;
-import android.content.Context;
-import android.content.res.Configuration;
 
 public class MainActivity extends AppCompatActivity {
     EditText quizPlayer;
@@ -34,9 +25,6 @@ public class MainActivity extends AppCompatActivity {
     CheckBox responseNineA, responseNineB, responseNineC, responseNineD;
     RadioButton responseThreeA, responseThreeB, responseThreeC, responseThreeD;
     Switch responseTen;
-    Button showPopupBtn, closePopupBtn;
-    RelativeLayout relativeLayout1;
-    PopupWindow PopupWindow;
     int score = 0;
 
     @Override
