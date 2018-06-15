@@ -15,15 +15,15 @@ public class MainActivity extends AppCompatActivity {
     EditText quizPlayer;
     TextView questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix;
     TextView questionSeven, questionEight, questionNine, questionTen;
-    CheckBox responseOneA, responseOneB, responseOneC, responseOneD, responseOneE, responseOneF;
-    CheckBox responseTwoA, responseTwoB, responseTwoC, responseTwoD, responseTwoE, responseTwoF;
+    RadioButton responseOneA, responseOneB, responseOneC, responseOneD, responseOneE, responseOneF;
+    RadioButton responseTwoA, responseTwoB, responseTwoC, responseTwoD, responseTwoE, responseTwoF;
+    RadioButton responseThreeA, responseThreeB, responseThreeC, responseThreeD;
     CheckBox responseFourA, responseFourB, responseFourC, responseFourD, responseFourE, responseFourF;
     CheckBox responseFiveA, responseFiveB, responseFiveC, responseFiveD, responseFiveE, responseFiveF;
-    CheckBox responseSixA, responseSixB, responseSixC, responseSixD, responseSixE, responseSixF;
-    CheckBox responseSevenA, responseSevenB, responseSevenC, responseSevenD, responseEightA;
-    CheckBox responseEightB, responseEightC, responseEightD, responseEightE, responseEightF;
+    RadioButton responseSixA, responseSixB, responseSixC, responseSixD, responseSixE, responseSixF;
+    RadioButton responseSevenA, responseSevenB, responseSevenC, responseSevenD;
+    CheckBox responseEightA, responseEightB, responseEightC, responseEightD, responseEightE, responseEightF;
     CheckBox responseNineA, responseNineB, responseNineC, responseNineD;
-    RadioButton responseThreeA, responseThreeB, responseThreeC, responseThreeD;
     Switch responseTen;
     int score = 0;
 
@@ -47,19 +47,19 @@ public class MainActivity extends AppCompatActivity {
         questionTen = (TextView) findViewById(R.id.question_ten);
 
         //initiate Checkboxes
-        responseOneA = (CheckBox) findViewById(R.id.question_one_response_a);
-        responseOneB = (CheckBox) findViewById(R.id.question_one_response_b);
-        responseOneC = (CheckBox) findViewById(R.id.question_one_response_c);
-        responseOneD = (CheckBox) findViewById(R.id.question_one_response_d);
-        responseOneE = (CheckBox) findViewById(R.id.question_one_response_e);
-        responseOneF = (CheckBox) findViewById(R.id.question_one_response_f);
+        responseOneA = (RadioButton) findViewById(R.id.question_one_response_a);
+        responseOneB = (RadioButton) findViewById(R.id.question_one_response_b);
+        responseOneC = (RadioButton) findViewById(R.id.question_one_response_c);
+        responseOneD = (RadioButton) findViewById(R.id.question_one_response_d);
+        responseOneE = (RadioButton) findViewById(R.id.question_one_response_e);
+        responseOneF = (RadioButton) findViewById(R.id.question_one_response_f);
 
-        responseTwoA = (CheckBox) findViewById(R.id.question_two_response_a);
-        responseTwoB = (CheckBox) findViewById(R.id.question_two_response_b);
-        responseTwoC = (CheckBox) findViewById(R.id.question_two_response_c);
-        responseTwoD = (CheckBox) findViewById(R.id.question_two_response_d);
-        responseTwoE = (CheckBox) findViewById(R.id.question_two_response_e);
-        responseTwoF = (CheckBox) findViewById(R.id.question_two_response_f);
+        responseTwoA = (RadioButton) findViewById(R.id.question_two_response_a);
+        responseTwoB = (RadioButton) findViewById(R.id.question_two_response_b);
+        responseTwoC = (RadioButton) findViewById(R.id.question_two_response_c);
+        responseTwoD = (RadioButton) findViewById(R.id.question_two_response_d);
+        responseTwoE = (RadioButton) findViewById(R.id.question_two_response_e);
+        responseTwoF = (RadioButton) findViewById(R.id.question_two_response_f);
 
         responseThreeA = (RadioButton) findViewById(R.id.question_three_response_a);
         responseThreeB = (RadioButton) findViewById(R.id.question_three_response_b);
@@ -80,17 +80,17 @@ public class MainActivity extends AppCompatActivity {
         responseFiveE = (CheckBox) findViewById(R.id.question_five_response_e);
         responseFiveF = (CheckBox) findViewById(R.id.question_five_response_f);
 
-        responseSixA = (CheckBox) findViewById(R.id.question_six_response_a);
-        responseSixB = (CheckBox) findViewById(R.id.question_six_response_b);
-        responseSixC = (CheckBox) findViewById(R.id.question_six_response_c);
-        responseSixD = (CheckBox) findViewById(R.id.question_six_response_d);
-        responseSixE = (CheckBox) findViewById(R.id.question_six_response_e);
-        responseSixF = (CheckBox) findViewById(R.id.question_six_response_f);
+        responseSixA = (RadioButton) findViewById(R.id.question_six_response_a);
+        responseSixB = (RadioButton) findViewById(R.id.question_six_response_b);
+        responseSixC = (RadioButton) findViewById(R.id.question_six_response_c);
+        responseSixD = (RadioButton) findViewById(R.id.question_six_response_d);
+        responseSixE = (RadioButton) findViewById(R.id.question_six_response_e);
+        responseSixF = (RadioButton) findViewById(R.id.question_six_response_f);
 
-        responseSevenA = (CheckBox) findViewById(R.id.question_seven_response_a);
-        responseSevenB = (CheckBox) findViewById(R.id.question_seven_response_b);
-        responseSevenC = (CheckBox) findViewById(R.id.question_seven_response_c);
-        responseSevenD = (CheckBox) findViewById(R.id.question_seven_response_d);
+        responseSevenA = (RadioButton) findViewById(R.id.question_seven_response_a);
+        responseSevenB = (RadioButton) findViewById(R.id.question_seven_response_b);
+        responseSevenC = (RadioButton) findViewById(R.id.question_seven_response_c);
+        responseSevenD = (RadioButton) findViewById(R.id.question_seven_response_d);
 
         responseEightA = (CheckBox) findViewById(R.id.question_eight_response_a);
         responseEightB = (CheckBox) findViewById(R.id.question_eight_response_b);
@@ -129,8 +129,14 @@ public class MainActivity extends AppCompatActivity {
         if (responseFourB.isChecked()) {
             score = score + 1;
         }
+        if (responseFourE.isChecked()) {
+            score = score + 1;
+        }
         //One point for a corrected answer in question five
         if (responseFiveA.isChecked()) {
+            score = score + 1;
+        }
+        if (responseFiveF.isChecked()) {
             score = score + 1;
         }
         //One point for a corrected answer in question six
@@ -145,6 +151,9 @@ public class MainActivity extends AppCompatActivity {
         if (responseEightC.isChecked()) {
             score = score + 1;
         }
+        if (responseEightE.isChecked()) {
+            score = score + 1;
+        }
         //One point for a corrected answer in question nine
         if (responseNineC.isChecked()) {
             score = score + 1;
@@ -156,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Display the winner or the loser
-        if (score >= 5) {
+        if (score >= 6) {
             String scoreMessage = getString(R.string.winner) + "\n" + name + "\n" + getString(R.string.score) + " " + score;
             Toast.makeText(this, scoreMessage, Toast.LENGTH_LONG).show();
             final MediaPlayer ring = MediaPlayer.create(this, R.raw.tada);
@@ -183,29 +192,29 @@ public class MainActivity extends AppCompatActivity {
 
         //Unchecked everything on this view
         if (responseOneA.isChecked())
-            responseOneA.toggle();
+            responseOneA.setChecked(false);
         if (responseOneB.isChecked())
-            responseOneB.toggle();
+            responseOneB.setChecked(false);
         if (responseOneC.isChecked())
-            responseOneC.toggle();
+            responseOneC.setChecked(false);
         if (responseOneD.isChecked())
-            responseOneD.toggle();
+            responseOneD.setChecked(false);
         if (responseOneE.isChecked())
-            responseOneE.toggle();
+            responseOneE.setChecked(false);
         if (responseOneF.isChecked())
-            responseOneF.toggle();
+            responseOneF.setChecked(false);
         if (responseTwoA.isChecked())
-            responseTwoA.toggle();
+            responseTwoA.setChecked(false);
         if (responseTwoB.isChecked())
-            responseTwoB.toggle();
+            responseTwoB.setChecked(false);
         if (responseTwoC.isChecked())
-            responseTwoC.toggle();
+            responseTwoC.setChecked(false);
         if (responseTwoD.isChecked())
-            responseTwoD.toggle();
+            responseTwoD.setChecked(false);
         if (responseTwoE.isChecked())
-            responseTwoE.toggle();
+            responseTwoE.setChecked(false);
         if (responseTwoF.isChecked())
-            responseTwoF.toggle();
+            responseTwoF.setChecked(false);
         if (responseThreeA.isChecked())
             responseThreeA.setChecked(false);
         if (responseThreeB.isChecked())
@@ -233,25 +242,25 @@ public class MainActivity extends AppCompatActivity {
         if (responseFiveF.isChecked())
             responseFiveF.toggle();
         if (responseSixA.isChecked())
-            responseSixA.toggle();
+            responseSixA.setChecked(false);
         if (responseSixB.isChecked())
-            responseSixB.toggle();
+            responseSixB.setChecked(false);
         if (responseSixC.isChecked())
-            responseSixC.toggle();
+            responseSixC.setChecked(false);
         if (responseSixD.isChecked())
-            responseSixD.toggle();
+            responseSixD.setChecked(false);
         if (responseSixE.isChecked())
-            responseSixE.toggle();
+            responseSixE.setChecked(false);
         if (responseSixF.isChecked())
-            responseSixF.toggle();
+            responseSixF.setChecked(false);
         if (responseSevenA.isChecked())
-            responseSevenA.toggle();
+            responseSevenA.setChecked(false);
         if (responseSevenB.isChecked())
-            responseSevenB.toggle();
+            responseSevenB.setChecked(false);
         if (responseSevenC.isChecked())
-            responseSevenC.toggle();
+            responseSevenC.setChecked(false);
         if (responseSevenD.isChecked())
-            responseSevenD.toggle();
+            responseSevenD.setChecked(false);
         if (responseEightA.isChecked())
             responseEightA.toggle();
         if (responseEightB.isChecked())

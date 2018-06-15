@@ -80,34 +80,25 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_one_response_a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_one_response_a" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_one_response_b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_one_response_b" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_one_response_c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_one_response_c" />
 
             </LinearLayout>
@@ -126,34 +117,25 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_one_response_d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_one_response_d" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_one_response_e"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_one_response_e" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_one_response_f"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_one_response_f" />
 
             </LinearLayout>
@@ -184,34 +166,25 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_two_response_a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_two_response_a" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_two_response_b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_two_response_b" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_two_response_c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_two_response_c" />
 
             </LinearLayout>
@@ -230,34 +203,25 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_two_response_d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_two_response_d" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_two_response_e"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_two_response_e" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_two_response_f"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_two_response_f" />
 
             </LinearLayout>
@@ -439,35 +403,35 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/question_five_response_a"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
-                    android:text="@string/question_five_response_a" />
+                    <CheckBox
+                        android:id="@+id/question_five_response_a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_16dp"
+                        android:paddingLeft="@dimen/dimen_16dp"
+                        android:paddingRight="@dimen/dimen_16dp"
+                        android:paddingStart="@dimen/dimen_16dp"
+                        android:text="@string/question_five_response_a" />
 
-                <CheckBox
-                    android:id="@+id/question_five_response_b"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
-                    android:text="@string/question_five_response_b" />
+                    <CheckBox
+                        android:id="@+id/question_five_response_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_16dp"
+                        android:paddingLeft="@dimen/dimen_16dp"
+                        android:paddingRight="@dimen/dimen_16dp"
+                        android:paddingStart="@dimen/dimen_16dp"
+                        android:text="@string/question_five_response_b" />
 
-                <CheckBox
-                    android:id="@+id/question_five_response_c"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
-                    android:text="@string/question_five_response_c" />
+                    <CheckBox
+                        android:id="@+id/question_five_response_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_16dp"
+                        android:paddingLeft="@dimen/dimen_16dp"
+                        android:paddingRight="@dimen/dimen_16dp"
+                        android:paddingStart="@dimen/dimen_16dp"
+                        android:text="@string/question_five_response_c" />
 
             </LinearLayout>
 
@@ -543,34 +507,25 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_six_response_a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_six_response_a" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_six_response_b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_six_response_b" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_six_response_c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_six_response_c" />
 
             </LinearLayout>
@@ -589,34 +544,25 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_six_response_d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_six_response_d" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_six_response_e"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_six_response_e" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_six_response_f"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_six_response_f" />
 
             </LinearLayout>
@@ -655,24 +601,18 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_seven_response_a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_seven_response_a" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_seven_response_b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_seven_response_b" />
 
             </LinearLayout>
@@ -691,24 +631,18 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_seven_response_c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_seven_response_c" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/question_seven_response_d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    android:paddingLeft="@dimen/dimen_16dp"
-                    android:paddingRight="@dimen/dimen_16dp"
-                    android:paddingStart="@dimen/dimen_16dp"
+                    android:padding="@dimen/dimen_16dp"
                     android:text="@string/question_seven_response_d" />
 
             </LinearLayout>
