@@ -403,35 +403,35 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                    <CheckBox
-                        android:id="@+id/question_five_response_a"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/dimen_16dp"
-                        android:paddingLeft="@dimen/dimen_16dp"
-                        android:paddingRight="@dimen/dimen_16dp"
-                        android:paddingStart="@dimen/dimen_16dp"
-                        android:text="@string/question_five_response_a" />
+                <CheckBox
+                    android:id="@+id/question_five_response_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_16dp"
+                    android:paddingLeft="@dimen/dimen_16dp"
+                    android:paddingRight="@dimen/dimen_16dp"
+                    android:paddingStart="@dimen/dimen_16dp"
+                    android:text="@string/question_five_response_a" />
 
-                    <CheckBox
-                        android:id="@+id/question_five_response_b"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/dimen_16dp"
-                        android:paddingLeft="@dimen/dimen_16dp"
-                        android:paddingRight="@dimen/dimen_16dp"
-                        android:paddingStart="@dimen/dimen_16dp"
-                        android:text="@string/question_five_response_b" />
+                <CheckBox
+                    android:id="@+id/question_five_response_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_16dp"
+                    android:paddingLeft="@dimen/dimen_16dp"
+                    android:paddingRight="@dimen/dimen_16dp"
+                    android:paddingStart="@dimen/dimen_16dp"
+                    android:text="@string/question_five_response_b" />
 
-                    <CheckBox
-                        android:id="@+id/question_five_response_c"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/dimen_16dp"
-                        android:paddingLeft="@dimen/dimen_16dp"
-                        android:paddingRight="@dimen/dimen_16dp"
-                        android:paddingStart="@dimen/dimen_16dp"
-                        android:text="@string/question_five_response_c" />
+                <CheckBox
+                    android:id="@+id/question_five_response_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_16dp"
+                    android:paddingLeft="@dimen/dimen_16dp"
+                    android:paddingRight="@dimen/dimen_16dp"
+                    android:paddingStart="@dimen/dimen_16dp"
+                    android:text="@string/question_five_response_c" />
 
             </LinearLayout>
 
@@ -908,6 +908,7 @@
             android:layout_marginTop="@dimen/dimen_32dp">
 
             <Button
+                android:id="@+id/button_results"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -923,6 +924,7 @@
                 android:src="@null" />
 
             <Button
+                android:id="@+id/button_reset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
