@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         final Button button2 = (Button) findViewById(R.id.button_reset);
         quizPlayer = (EditText) findViewById(R.id.quiz_name);
 
-        // Setup event handlers
+        // Setup event handlers (result button)
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String name = quizPlayer.getText().toString();
@@ -113,80 +113,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //initiate TextViews
-        questionOne = (TextView) findViewById(R.id.question_one);
-        questionTwo = (TextView) findViewById(R.id.question_two);
-        questionThree = (TextView) findViewById(R.id.question_three);
-        questionFour = (TextView) findViewById(R.id.question_four);
-        questionFive = (TextView) findViewById(R.id.question_five);
-        questionSix = (TextView) findViewById(R.id.question_six);
-        questionSeven = (TextView) findViewById(R.id.question_seven);
-        questionEight = (TextView) findViewById(R.id.question_eight);
-        questionNine = (TextView) findViewById(R.id.question_nine);
-        questionTen = (TextView) findViewById(R.id.question_ten);
-
-        //initiate Checkboxes
-        responseOneA = (RadioButton) findViewById(R.id.question_one_response_a);
-        responseOneB = (RadioButton) findViewById(R.id.question_one_response_b);
-        responseOneC = (RadioButton) findViewById(R.id.question_one_response_c);
-        responseOneD = (RadioButton) findViewById(R.id.question_one_response_d);
-        responseOneE = (RadioButton) findViewById(R.id.question_one_response_e);
-        responseOneF = (RadioButton) findViewById(R.id.question_one_response_f);
-
-        responseTwoA = (RadioButton) findViewById(R.id.question_two_response_a);
-        responseTwoB = (RadioButton) findViewById(R.id.question_two_response_b);
-        responseTwoC = (RadioButton) findViewById(R.id.question_two_response_c);
-        responseTwoD = (RadioButton) findViewById(R.id.question_two_response_d);
-        responseTwoE = (RadioButton) findViewById(R.id.question_two_response_e);
-        responseTwoF = (RadioButton) findViewById(R.id.question_two_response_f);
-
-        responseThreeA = (RadioButton) findViewById(R.id.question_three_response_a);
-        responseThreeB = (RadioButton) findViewById(R.id.question_three_response_b);
-        responseThreeC = (RadioButton) findViewById(R.id.question_three_response_c);
-        responseThreeD = (RadioButton) findViewById(R.id.question_three_response_d);
-
-        responseFourA = (CheckBox) findViewById(R.id.question_four_response_a);
-        responseFourB = (CheckBox) findViewById(R.id.question_four_response_b);
-        responseFourC = (CheckBox) findViewById(R.id.question_four_response_c);
-        responseFourD = (CheckBox) findViewById(R.id.question_four_response_d);
-        responseFourE = (CheckBox) findViewById(R.id.question_four_response_e);
-        responseFourF = (CheckBox) findViewById(R.id.question_four_response_f);
-
-        responseFiveA = (CheckBox) findViewById(R.id.question_five_response_a);
-        responseFiveB = (CheckBox) findViewById(R.id.question_five_response_b);
-        responseFiveC = (CheckBox) findViewById(R.id.question_five_response_c);
-        responseFiveD = (CheckBox) findViewById(R.id.question_five_response_d);
-        responseFiveE = (CheckBox) findViewById(R.id.question_five_response_e);
-        responseFiveF = (CheckBox) findViewById(R.id.question_five_response_f);
-
-        responseSixA = (RadioButton) findViewById(R.id.question_six_response_a);
-        responseSixB = (RadioButton) findViewById(R.id.question_six_response_b);
-        responseSixC = (RadioButton) findViewById(R.id.question_six_response_c);
-        responseSixD = (RadioButton) findViewById(R.id.question_six_response_d);
-        responseSixE = (RadioButton) findViewById(R.id.question_six_response_e);
-        responseSixF = (RadioButton) findViewById(R.id.question_six_response_f);
-
-        responseSevenA = (RadioButton) findViewById(R.id.question_seven_response_a);
-        responseSevenB = (RadioButton) findViewById(R.id.question_seven_response_b);
-        responseSevenC = (RadioButton) findViewById(R.id.question_seven_response_c);
-        responseSevenD = (RadioButton) findViewById(R.id.question_seven_response_d);
-
-        responseEightA = (CheckBox) findViewById(R.id.question_eight_response_a);
-        responseEightB = (CheckBox) findViewById(R.id.question_eight_response_b);
-        responseEightC = (CheckBox) findViewById(R.id.question_eight_response_c);
-        responseEightD = (CheckBox) findViewById(R.id.question_eight_response_d);
-        responseEightE = (CheckBox) findViewById(R.id.question_eight_response_e);
-        responseEightF = (CheckBox) findViewById(R.id.question_eight_response_f);
-
-        responseNineA = (CheckBox) findViewById(R.id.question_nine_response_a);
-        responseNineB = (CheckBox) findViewById(R.id.question_nine_response_b);
-        responseNineC = (CheckBox) findViewById(R.id.question_nine_response_c);
-        responseNineD = (CheckBox) findViewById(R.id.question_nine_response_d);
-
-        //initiate Switch
-        responseTen = (Switch) findViewById(R.id.question_ten_switch);
-
-        // Setup event handlers
+        // Setup event handlers (reset button)
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -298,5 +225,78 @@ public class MainActivity extends AppCompatActivity {
                 ring.start();
             }
         });
+
+        //initiate TextViews
+        questionOne = (TextView) findViewById(R.id.question_one);
+        questionTwo = (TextView) findViewById(R.id.question_two);
+        questionThree = (TextView) findViewById(R.id.question_three);
+        questionFour = (TextView) findViewById(R.id.question_four);
+        questionFive = (TextView) findViewById(R.id.question_five);
+        questionSix = (TextView) findViewById(R.id.question_six);
+        questionSeven = (TextView) findViewById(R.id.question_seven);
+        questionEight = (TextView) findViewById(R.id.question_eight);
+        questionNine = (TextView) findViewById(R.id.question_nine);
+        questionTen = (TextView) findViewById(R.id.question_ten);
+
+        //initiate Checkboxes
+        responseOneA = (RadioButton) findViewById(R.id.question_one_response_a);
+        responseOneB = (RadioButton) findViewById(R.id.question_one_response_b);
+        responseOneC = (RadioButton) findViewById(R.id.question_one_response_c);
+        responseOneD = (RadioButton) findViewById(R.id.question_one_response_d);
+        responseOneE = (RadioButton) findViewById(R.id.question_one_response_e);
+        responseOneF = (RadioButton) findViewById(R.id.question_one_response_f);
+
+        responseTwoA = (RadioButton) findViewById(R.id.question_two_response_a);
+        responseTwoB = (RadioButton) findViewById(R.id.question_two_response_b);
+        responseTwoC = (RadioButton) findViewById(R.id.question_two_response_c);
+        responseTwoD = (RadioButton) findViewById(R.id.question_two_response_d);
+        responseTwoE = (RadioButton) findViewById(R.id.question_two_response_e);
+        responseTwoF = (RadioButton) findViewById(R.id.question_two_response_f);
+
+        responseThreeA = (RadioButton) findViewById(R.id.question_three_response_a);
+        responseThreeB = (RadioButton) findViewById(R.id.question_three_response_b);
+        responseThreeC = (RadioButton) findViewById(R.id.question_three_response_c);
+        responseThreeD = (RadioButton) findViewById(R.id.question_three_response_d);
+
+        responseFourA = (CheckBox) findViewById(R.id.question_four_response_a);
+        responseFourB = (CheckBox) findViewById(R.id.question_four_response_b);
+        responseFourC = (CheckBox) findViewById(R.id.question_four_response_c);
+        responseFourD = (CheckBox) findViewById(R.id.question_four_response_d);
+        responseFourE = (CheckBox) findViewById(R.id.question_four_response_e);
+        responseFourF = (CheckBox) findViewById(R.id.question_four_response_f);
+
+        responseFiveA = (CheckBox) findViewById(R.id.question_five_response_a);
+        responseFiveB = (CheckBox) findViewById(R.id.question_five_response_b);
+        responseFiveC = (CheckBox) findViewById(R.id.question_five_response_c);
+        responseFiveD = (CheckBox) findViewById(R.id.question_five_response_d);
+        responseFiveE = (CheckBox) findViewById(R.id.question_five_response_e);
+        responseFiveF = (CheckBox) findViewById(R.id.question_five_response_f);
+
+        responseSixA = (RadioButton) findViewById(R.id.question_six_response_a);
+        responseSixB = (RadioButton) findViewById(R.id.question_six_response_b);
+        responseSixC = (RadioButton) findViewById(R.id.question_six_response_c);
+        responseSixD = (RadioButton) findViewById(R.id.question_six_response_d);
+        responseSixE = (RadioButton) findViewById(R.id.question_six_response_e);
+        responseSixF = (RadioButton) findViewById(R.id.question_six_response_f);
+
+        responseSevenA = (RadioButton) findViewById(R.id.question_seven_response_a);
+        responseSevenB = (RadioButton) findViewById(R.id.question_seven_response_b);
+        responseSevenC = (RadioButton) findViewById(R.id.question_seven_response_c);
+        responseSevenD = (RadioButton) findViewById(R.id.question_seven_response_d);
+
+        responseEightA = (CheckBox) findViewById(R.id.question_eight_response_a);
+        responseEightB = (CheckBox) findViewById(R.id.question_eight_response_b);
+        responseEightC = (CheckBox) findViewById(R.id.question_eight_response_c);
+        responseEightD = (CheckBox) findViewById(R.id.question_eight_response_d);
+        responseEightE = (CheckBox) findViewById(R.id.question_eight_response_e);
+        responseEightF = (CheckBox) findViewById(R.id.question_eight_response_f);
+
+        responseNineA = (CheckBox) findViewById(R.id.question_nine_response_a);
+        responseNineB = (CheckBox) findViewById(R.id.question_nine_response_b);
+        responseNineC = (CheckBox) findViewById(R.id.question_nine_response_c);
+        responseNineD = (CheckBox) findViewById(R.id.question_nine_response_d);
+
+        //initiate Switch
+        responseTen = (Switch) findViewById(R.id.question_ten_switch);
     }
 }
