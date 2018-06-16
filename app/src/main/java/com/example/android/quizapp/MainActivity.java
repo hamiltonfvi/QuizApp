@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.media.MediaPlayer;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     EditText quizPlayer;
@@ -32,7 +33,85 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Get a handle to all user interface elements
+        final Button button = (Button) findViewById(R.id.button_results);
+        final Button button2 = (Button) findViewById(R.id.button_reset);
         quizPlayer = (EditText) findViewById(R.id.quiz_name);
+
+        // Setup event handlers
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String name = quizPlayer.getText().toString();
+
+                //One point for a corrected answer in question one
+                if (responseOneA.isChecked()) {
+                    score = score + 1;
+                }
+                //One point for a corrected answer in question two
+                if (responseTwoB.isChecked()) {
+                    score = score + 1;
+                }
+                //One point for a corrected answer in question three
+                if (responseThreeD.isChecked()) {
+                    score = score + 1;
+                }
+                //One point for a corrected answer in question four
+                if (responseFourB.isChecked()) {
+                    score = score + 1;
+                }
+                if (responseFourE.isChecked()) {
+                    score = score + 1;
+                }
+                //One point for a corrected answer in question five
+                if (responseFiveA.isChecked()) {
+                    score = score + 1;
+                }
+                if (responseFiveF.isChecked()) {
+                    score = score + 1;
+                }
+                //One point for a corrected answer in question six
+                if (responseSixD.isChecked()) {
+                    score = score + 1;
+                }
+                //One point for a corrected answer in question seven
+                if (responseSevenC.isChecked()) {
+                    score = score + 1;
+                }
+                //One point for a corrected answer in question eight
+                if (responseEightC.isChecked()) {
+                    score = score + 1;
+                }
+                if (responseEightE.isChecked()) {
+                    score = score + 1;
+                }
+                //One point for a corrected answer in question nine
+                if (responseNineC.isChecked()) {
+                    score = score + 1;
+                }
+
+                //One point for a corrected answer in question ten
+                if (responseTen.isChecked()) {
+                    score = score + 1;
+                }
+
+                //Display the winner or the loser
+                if (score >= 6) {
+                    String scoreMessage = getString(R.string.winner) + "\n" + name + "\n" + getString(R.string.score) + " " + score;
+                    Toast.makeText(getApplicationContext() , scoreMessage, Toast.LENGTH_LONG).show();
+                    final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.tada);
+                    ring.start();
+
+                } else {
+                    String scoreMessage = getString(R.string.loser) + "\n" + name + "\n" + getString(R.string.score) + " " + score;
+                    Toast.makeText(getApplicationContext() , scoreMessage, Toast.LENGTH_LONG).show();
+                    final MediaPlayer ring = MediaPlayer.create(getApplicationContext() , R.raw.lost);
+                    ring.start();
+                }
+
+                //Prevents adding points to score if the user keep pressing Results button
+                score = 0;
+            }
+        });
 
         //initiate TextViews
         questionOne = (TextView) findViewById(R.id.question_one);
@@ -107,188 +186,117 @@ public class MainActivity extends AppCompatActivity {
         //initiate Switch
         responseTen = (Switch) findViewById(R.id.question_ten_switch);
 
-    }
+        // Setup event handlers
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
 
-    public void quizResults(View view) {
+                //Resets score
+                score = 0;
 
-        String name = quizPlayer.getText().toString();
+                //Resets Name of the user
+                quizPlayer.setText("");
 
-        //One point for a corrected answer in question one
-        if (responseOneA.isChecked()) {
-            score = score + 1;
-        }
-        //One point for a corrected answer in question two
-        if (responseTwoB.isChecked()) {
-            score = score + 1;
-        }
-        //One point for a corrected answer in question three
-        if (responseThreeD.isChecked()) {
-            score = score + 1;
-        }
-        //One point for a corrected answer in question four
-        if (responseFourB.isChecked()) {
-            score = score + 1;
-        }
-        if (responseFourE.isChecked()) {
-            score = score + 1;
-        }
-        //One point for a corrected answer in question five
-        if (responseFiveA.isChecked()) {
-            score = score + 1;
-        }
-        if (responseFiveF.isChecked()) {
-            score = score + 1;
-        }
-        //One point for a corrected answer in question six
-        if (responseSixD.isChecked()) {
-            score = score + 1;
-        }
-        //One point for a corrected answer in question seven
-        if (responseSevenC.isChecked()) {
-            score = score + 1;
-        }
-        //One point for a corrected answer in question eight
-        if (responseEightC.isChecked()) {
-            score = score + 1;
-        }
-        if (responseEightE.isChecked()) {
-            score = score + 1;
-        }
-        //One point for a corrected answer in question nine
-        if (responseNineC.isChecked()) {
-            score = score + 1;
-        }
+                //Unchecked everything on this view
+                if (responseOneA.isChecked())
+                    responseOneA.setChecked(false);
+                if (responseOneB.isChecked())
+                    responseOneB.setChecked(false);
+                if (responseOneC.isChecked())
+                    responseOneC.setChecked(false);
+                if (responseOneD.isChecked())
+                    responseOneD.setChecked(false);
+                if (responseOneE.isChecked())
+                    responseOneE.setChecked(false);
+                if (responseOneF.isChecked())
+                    responseOneF.setChecked(false);
+                if (responseTwoA.isChecked())
+                    responseTwoA.setChecked(false);
+                if (responseTwoB.isChecked())
+                    responseTwoB.setChecked(false);
+                if (responseTwoC.isChecked())
+                    responseTwoC.setChecked(false);
+                if (responseTwoD.isChecked())
+                    responseTwoD.setChecked(false);
+                if (responseTwoE.isChecked())
+                    responseTwoE.setChecked(false);
+                if (responseTwoF.isChecked())
+                    responseTwoF.setChecked(false);
+                if (responseThreeA.isChecked())
+                    responseThreeA.setChecked(false);
+                if (responseThreeB.isChecked())
+                    responseThreeB.setChecked(false);
+                if (responseThreeC.isChecked())
+                    responseThreeC.setChecked(false);
+                if (responseThreeD.isChecked())
+                    responseThreeD.setChecked(false);
+                if (responseFourA.isChecked())
+                    responseFourA.toggle();
+                if (responseFourB.isChecked())
+                    responseFourB.toggle();
+                if (responseFourC.isChecked())
+                    responseFourC.toggle();
+                if (responseFiveA.isChecked())
+                    responseFiveA.toggle();
+                if (responseFiveB.isChecked())
+                    responseFiveB.toggle();
+                if (responseFiveC.isChecked())
+                    responseFiveC.toggle();
+                if (responseFiveD.isChecked())
+                    responseFiveD.toggle();
+                if (responseFiveE.isChecked())
+                    responseFiveE.toggle();
+                if (responseFiveF.isChecked())
+                    responseFiveF.toggle();
+                if (responseSixA.isChecked())
+                    responseSixA.setChecked(false);
+                if (responseSixB.isChecked())
+                    responseSixB.setChecked(false);
+                if (responseSixC.isChecked())
+                    responseSixC.setChecked(false);
+                if (responseSixD.isChecked())
+                    responseSixD.setChecked(false);
+                if (responseSixE.isChecked())
+                    responseSixE.setChecked(false);
+                if (responseSixF.isChecked())
+                    responseSixF.setChecked(false);
+                if (responseSevenA.isChecked())
+                    responseSevenA.setChecked(false);
+                if (responseSevenB.isChecked())
+                    responseSevenB.setChecked(false);
+                if (responseSevenC.isChecked())
+                    responseSevenC.setChecked(false);
+                if (responseSevenD.isChecked())
+                    responseSevenD.setChecked(false);
+                if (responseEightA.isChecked())
+                    responseEightA.toggle();
+                if (responseEightB.isChecked())
+                    responseEightB.toggle();
+                if (responseEightC.isChecked())
+                    responseEightC.toggle();
+                if (responseEightD.isChecked())
+                    responseEightD.toggle();
+                if (responseEightE.isChecked())
+                    responseEightE.toggle();
+                if (responseEightF.isChecked())
+                    responseEightF.toggle();
+                if (responseNineA.isChecked())
+                    responseNineA.toggle();
+                if (responseNineB.isChecked())
+                    responseNineB.toggle();
+                if (responseNineC.isChecked())
+                    responseNineC.toggle();
+                if (responseNineD.isChecked())
+                    responseNineD.toggle();
+                if (responseTen.isChecked())
+                    responseTen.toggle();
 
-        //One point for a corrected answer in question ten
-        if (responseTen.isChecked()) {
-            score = score + 1;
-        }
+                //Start Over and go to the username field
+                recreate();
 
-        //Display the winner or the loser
-        if (score >= 6) {
-            String scoreMessage = getString(R.string.winner) + "\n" + name + "\n" + getString(R.string.score) + " " + score;
-            Toast.makeText(this, scoreMessage, Toast.LENGTH_LONG).show();
-            final MediaPlayer ring = MediaPlayer.create(this, R.raw.tada);
-            ring.start();
-
-        } else {
-            String scoreMessage = getString(R.string.loser) + "\n" + name + "\n" + getString(R.string.score) + " " + score;
-            Toast.makeText(this, scoreMessage, Toast.LENGTH_LONG).show();
-            final MediaPlayer ring = MediaPlayer.create(this, R.raw.lost);
-            ring.start();
-        }
-
-        //Prevents adding points to score if the user keep pressing Results button
-        score = 0;
-    }
-
-    public void onReset(View view) {
-
-        //Resets score
-        score = 0;
-
-        //Resets Name of the user
-        quizPlayer.setText("");
-
-        //Unchecked everything on this view
-        if (responseOneA.isChecked())
-            responseOneA.setChecked(false);
-        if (responseOneB.isChecked())
-            responseOneB.setChecked(false);
-        if (responseOneC.isChecked())
-            responseOneC.setChecked(false);
-        if (responseOneD.isChecked())
-            responseOneD.setChecked(false);
-        if (responseOneE.isChecked())
-            responseOneE.setChecked(false);
-        if (responseOneF.isChecked())
-            responseOneF.setChecked(false);
-        if (responseTwoA.isChecked())
-            responseTwoA.setChecked(false);
-        if (responseTwoB.isChecked())
-            responseTwoB.setChecked(false);
-        if (responseTwoC.isChecked())
-            responseTwoC.setChecked(false);
-        if (responseTwoD.isChecked())
-            responseTwoD.setChecked(false);
-        if (responseTwoE.isChecked())
-            responseTwoE.setChecked(false);
-        if (responseTwoF.isChecked())
-            responseTwoF.setChecked(false);
-        if (responseThreeA.isChecked())
-            responseThreeA.setChecked(false);
-        if (responseThreeB.isChecked())
-            responseThreeB.setChecked(false);
-        if (responseThreeC.isChecked())
-            responseThreeC.setChecked(false);
-        if (responseThreeD.isChecked())
-            responseThreeD.setChecked(false);
-        if (responseFourA.isChecked())
-            responseFourA.toggle();
-        if (responseFourB.isChecked())
-            responseFourB.toggle();
-        if (responseFourC.isChecked())
-            responseFourC.toggle();
-        if (responseFiveA.isChecked())
-            responseFiveA.toggle();
-        if (responseFiveB.isChecked())
-            responseFiveB.toggle();
-        if (responseFiveC.isChecked())
-            responseFiveC.toggle();
-        if (responseFiveD.isChecked())
-            responseFiveD.toggle();
-        if (responseFiveE.isChecked())
-            responseFiveE.toggle();
-        if (responseFiveF.isChecked())
-            responseFiveF.toggle();
-        if (responseSixA.isChecked())
-            responseSixA.setChecked(false);
-        if (responseSixB.isChecked())
-            responseSixB.setChecked(false);
-        if (responseSixC.isChecked())
-            responseSixC.setChecked(false);
-        if (responseSixD.isChecked())
-            responseSixD.setChecked(false);
-        if (responseSixE.isChecked())
-            responseSixE.setChecked(false);
-        if (responseSixF.isChecked())
-            responseSixF.setChecked(false);
-        if (responseSevenA.isChecked())
-            responseSevenA.setChecked(false);
-        if (responseSevenB.isChecked())
-            responseSevenB.setChecked(false);
-        if (responseSevenC.isChecked())
-            responseSevenC.setChecked(false);
-        if (responseSevenD.isChecked())
-            responseSevenD.setChecked(false);
-        if (responseEightA.isChecked())
-            responseEightA.toggle();
-        if (responseEightB.isChecked())
-            responseEightB.toggle();
-        if (responseEightC.isChecked())
-            responseEightC.toggle();
-        if (responseEightD.isChecked())
-            responseEightD.toggle();
-        if (responseEightE.isChecked())
-            responseEightE.toggle();
-        if (responseEightF.isChecked())
-            responseEightF.toggle();
-        if (responseNineA.isChecked())
-            responseNineA.toggle();
-        if (responseNineB.isChecked())
-            responseNineB.toggle();
-        if (responseNineC.isChecked())
-            responseNineC.toggle();
-        if (responseNineD.isChecked())
-            responseNineD.toggle();
-        if (responseTen.isChecked())
-            responseTen.toggle();
-
-        //Start Over and go to the username field
-        recreate();
-
-        //Play reset tone
-        final MediaPlayer ring = MediaPlayer.create(this, R.raw.reset);
-        ring.start();
+                //Play reset tone
+                final MediaPlayer ring = MediaPlayer.create(getApplicationContext() , R.raw.reset);
+                ring.start();
+            }
+        });
     }
 }
