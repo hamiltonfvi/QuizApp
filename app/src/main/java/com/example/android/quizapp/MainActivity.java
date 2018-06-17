@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton responseSixA, responseSixB, responseSixC, responseSixD, responseSixE, responseSixF;
     RadioButton responseSevenA, responseSevenB, responseSevenC, responseSevenD;
     CheckBox responseEightA, responseEightB, responseEightC, responseEightD, responseEightE, responseEightF;
-    CheckBox responseNineA, responseNineB, responseNineC, responseNineD;
+    RadioButton responseNineA, responseNineB, responseNineC, responseNineD;
     Switch responseTen;
     int score = 0;
 
@@ -56,17 +56,11 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question four
-                if (responseFourB.isChecked()) {
-                    score = score + 1;
-                }
-                if (responseFourE.isChecked()) {
+                if (responseFourB.isChecked() && responseFourE.isChecked())   {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question five
-                if (responseFiveA.isChecked()) {
-                    score = score + 1;
-                }
-                if (responseFiveF.isChecked()) {
+                if (responseFiveA.isChecked() && responseFiveF.isChecked()) {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question six
@@ -78,24 +72,19 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question eight
-                if (responseEightC.isChecked()) {
-                    score = score + 1;
-                }
-                if (responseEightE.isChecked()) {
+                if (responseEightC.isChecked() && responseEightE.isChecked()) {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question nine
                 if (responseNineC.isChecked()) {
                     score = score + 1;
                 }
-
                 //One point for a corrected answer in question ten
                 if (responseTen.isChecked()) {
                     score = score + 1;
                 }
-
                 //Display the winner or the loser
-                if (score >= 6) {
+                if (score >= 5) {
                     String scoreMessage = getString(R.string.winner) + "\n" + name + "\n" + getString(R.string.score) + " " + score;
                     Toast.makeText(getApplicationContext() , scoreMessage, Toast.LENGTH_LONG).show();
                     final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.tada);
@@ -207,13 +196,13 @@ public class MainActivity extends AppCompatActivity {
                 if (responseEightF.isChecked())
                     responseEightF.toggle();
                 if (responseNineA.isChecked())
-                    responseNineA.toggle();
+                    responseNineA.setChecked(false);
                 if (responseNineB.isChecked())
-                    responseNineB.toggle();
+                    responseNineB.setChecked(false);
                 if (responseNineC.isChecked())
-                    responseNineC.toggle();
+                    responseNineC.setChecked(false);
                 if (responseNineD.isChecked())
-                    responseNineD.toggle();
+                    responseNineD.setChecked(false);
                 if (responseTen.isChecked())
                     responseTen.toggle();
 
@@ -291,10 +280,10 @@ public class MainActivity extends AppCompatActivity {
         responseEightE = (CheckBox) findViewById(R.id.question_eight_response_e);
         responseEightF = (CheckBox) findViewById(R.id.question_eight_response_f);
 
-        responseNineA = (CheckBox) findViewById(R.id.question_nine_response_a);
-        responseNineB = (CheckBox) findViewById(R.id.question_nine_response_b);
-        responseNineC = (CheckBox) findViewById(R.id.question_nine_response_c);
-        responseNineD = (CheckBox) findViewById(R.id.question_nine_response_d);
+        responseNineA = (RadioButton) findViewById(R.id.question_nine_response_a);
+        responseNineB = (RadioButton) findViewById(R.id.question_nine_response_b);
+        responseNineC = (RadioButton) findViewById(R.id.question_nine_response_c);
+        responseNineD = (RadioButton) findViewById(R.id.question_nine_response_d);
 
         //initiate Switch
         responseTen = (Switch) findViewById(R.id.question_ten_switch);
