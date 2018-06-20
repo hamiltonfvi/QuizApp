@@ -13,12 +13,11 @@ import android.media.MediaPlayer;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    EditText quizPlayer;
+    EditText quizPlayer, questionThreeResponse;
     TextView questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix;
     TextView questionSeven, questionEight, questionNine, questionTen;
     RadioButton responseOneA, responseOneB, responseOneC, responseOneD, responseOneE, responseOneF;
     RadioButton responseTwoA, responseTwoB, responseTwoC, responseTwoD, responseTwoE, responseTwoF;
-    RadioButton responseThreeA, responseThreeB, responseThreeC, responseThreeD;
     CheckBox responseFourA, responseFourB, responseFourC, responseFourD, responseFourE, responseFourF;
     CheckBox responseFiveA, responseFiveB, responseFiveC, responseFiveD, responseFiveE, responseFiveF;
     RadioButton responseSixA, responseSixB, responseSixC, responseSixD, responseSixE, responseSixF;
@@ -37,11 +36,16 @@ public class MainActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.button_results);
         final Button button2 = (Button) findViewById(R.id.button_reset);
         quizPlayer = (EditText) findViewById(R.id.quiz_name);
+        questionThreeResponse = (EditText) findViewById((R.id.question_three_response));
 
         // Setup event handlers (result button)
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String name = quizPlayer.getText().toString();
+
+                //Converting EditText to Int
+                String response = questionThreeResponse.getText().toString();
+                int finalResponse = Integer.parseInt(response);
 
                 //One point for a corrected answer in question one
                 if (responseOneA.isChecked()) {
@@ -52,15 +56,19 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question three
-                if (responseThreeD.isChecked()) {
+                if (finalResponse == 3) {
                     score = score + 1;
+                } else {
+                    questionThreeResponse.setText(0);
                 }
                 //One point for a corrected answer in question four
-                if (responseFourB.isChecked() && responseFourE.isChecked())   {
+                if (responseFourB.isChecked() && responseFourE.isChecked() && !responseFourA.isChecked()
+                        && !responseFourC.isChecked() && !responseFourD.isChecked() && !responseFourF.isChecked()) {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question five
-                if (responseFiveA.isChecked() && responseFiveF.isChecked()) {
+                if (responseFiveA.isChecked() && responseFiveF.isChecked()&& !responseFiveB.isChecked()
+                        && !responseFiveC.isChecked() && !responseFiveD.isChecked() && !responseFiveE.isChecked()) {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question six
@@ -72,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question eight
-                if (responseEightC.isChecked() && responseEightE.isChecked()) {
+                if (responseEightC.isChecked() && responseEightE.isChecked()&& !responseEightA.isChecked()
+                        && !responseEightB.isChecked() && !responseEightD.isChecked() && !responseEightF.isChecked()) {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question nine
@@ -84,18 +93,16 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                 }
                 //Display the winner or the loser
+                String msg="";
                 if (score >= 5) {
-                    String scoreMessage = getString(R.string.winner) + "\n" + name + "\n" + getString(R.string.score) + " " + score;
-                    Toast.makeText(getApplicationContext() , scoreMessage, Toast.LENGTH_LONG).show();
-                    final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.tada);
-                    ring.start();
-
+                    msg = getString(R.string.winner);
                 } else {
-                    String scoreMessage = getString(R.string.loser) + "\n" + name + "\n" + getString(R.string.score) + " " + score;
-                    Toast.makeText(getApplicationContext() , scoreMessage, Toast.LENGTH_LONG).show();
-                    final MediaPlayer ring = MediaPlayer.create(getApplicationContext() , R.raw.lost);
-                    ring.start();
+                    msg = getString(R.string.loser);
                 }
+                String scoreMessage = msg + "\n" + name + "\n" + getString(R.string.score) + " " + score;
+                Toast.makeText(getApplicationContext() , scoreMessage, Toast.LENGTH_LONG).show();
+                final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.tada);
+                ring.start();
 
                 //Prevents adding points to score if the user keep pressing Results button
                 score = 0;
@@ -111,6 +118,9 @@ public class MainActivity extends AppCompatActivity {
 
                 //Resets Name of the user
                 quizPlayer.setText("");
+
+                //Resets response number three
+                questionThreeResponse.setText(null);
 
                 //Unchecked everything on this view
                 if (responseOneA.isChecked())
@@ -137,20 +147,18 @@ public class MainActivity extends AppCompatActivity {
                     responseTwoE.setChecked(false);
                 if (responseTwoF.isChecked())
                     responseTwoF.setChecked(false);
-                if (responseThreeA.isChecked())
-                    responseThreeA.setChecked(false);
-                if (responseThreeB.isChecked())
-                    responseThreeB.setChecked(false);
-                if (responseThreeC.isChecked())
-                    responseThreeC.setChecked(false);
-                if (responseThreeD.isChecked())
-                    responseThreeD.setChecked(false);
                 if (responseFourA.isChecked())
                     responseFourA.toggle();
                 if (responseFourB.isChecked())
                     responseFourB.toggle();
                 if (responseFourC.isChecked())
                     responseFourC.toggle();
+                if (responseFourD.isChecked())
+                    responseFourD.toggle();
+                if (responseFourE.isChecked())
+                    responseFourE.toggle();
+                if (responseFourF.isChecked())
+                    responseFourF.toggle();
                 if (responseFiveA.isChecked())
                     responseFiveA.toggle();
                 if (responseFiveB.isChecked())
@@ -210,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
                 recreate();
 
                 //Play reset tone
-                final MediaPlayer ring = MediaPlayer.create(getApplicationContext() , R.raw.reset);
+                final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.reset);
                 ring.start();
             }
         });
@@ -241,11 +249,6 @@ public class MainActivity extends AppCompatActivity {
         responseTwoD = (RadioButton) findViewById(R.id.question_two_response_d);
         responseTwoE = (RadioButton) findViewById(R.id.question_two_response_e);
         responseTwoF = (RadioButton) findViewById(R.id.question_two_response_f);
-
-        responseThreeA = (RadioButton) findViewById(R.id.question_three_response_a);
-        responseThreeB = (RadioButton) findViewById(R.id.question_three_response_b);
-        responseThreeC = (RadioButton) findViewById(R.id.question_three_response_c);
-        responseThreeD = (RadioButton) findViewById(R.id.question_three_response_d);
 
         responseFourA = (CheckBox) findViewById(R.id.question_four_response_a);
         responseFourB = (CheckBox) findViewById(R.id.question_four_response_b);
