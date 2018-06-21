@@ -37,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
         final Button button2 = (Button) findViewById(R.id.button_reset);
         quizPlayer = (EditText) findViewById(R.id.quiz_name);
         questionThreeResponse = (EditText) findViewById((R.id.question_three_response));
+        
+        //Check for null prior to retrieving the value, set value == 0 if this field is empty
+        if (questionThreeResponse.getText() != null) {
+            questionThreeResponse.setText("0");
+        }
 
         // Setup event handlers (result button)
         button.setOnClickListener(new View.OnClickListener() {
@@ -58,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 //One point for a corrected answer in question three
                 if (finalResponse == 3) {
                     score = score + 1;
-                } else {
-                    questionThreeResponse.setText(0);
                 }
                 //One point for a corrected answer in question four
                 if (responseFourB.isChecked() && responseFourE.isChecked() && !responseFourA.isChecked()
@@ -120,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 quizPlayer.setText("");
 
                 //Resets response number three
-                questionThreeResponse.setText(null);
+                questionThreeResponse.setText("0");
 
                 //Unchecked everything on this view
                 if (responseOneA.isChecked())
