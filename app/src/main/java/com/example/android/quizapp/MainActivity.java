@@ -43,9 +43,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String name = quizPlayer.getText().toString();
 
+                // get the EditText value as string - this can be empty value
+                String response = questionThreeResponse.getText().toString().trim();
+
                 //Converting EditText to Int
-                String response = questionThreeResponse.getText().toString();
-                int finalResponse = Integer.parseInt(response);
+                //int finalResponse = Integer.parseInt(response);
+                int finalResponse = 0;
 
                 //One point for a corrected answer in question one
                 if (responseOneA.isChecked()) {
@@ -58,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 //One point for a corrected answer in question three
                 if (finalResponse == 3) {
                     score = score + 1;
-                } else {
-                    questionThreeResponse.setText(0);
                 }
                 //One point for a corrected answer in question four
                 if (responseFourB.isChecked() && responseFourE.isChecked() && !responseFourA.isChecked()
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question five
-                if (responseFiveA.isChecked() && responseFiveF.isChecked()&& !responseFiveB.isChecked()
+                if (responseFiveA.isChecked() && responseFiveF.isChecked() && !responseFiveB.isChecked()
                         && !responseFiveC.isChecked() && !responseFiveD.isChecked() && !responseFiveE.isChecked()) {
                     score = score + 1;
                 }
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                 }
                 //One point for a corrected answer in question eight
-                if (responseEightC.isChecked() && responseEightE.isChecked()&& !responseEightA.isChecked()
+                if (responseEightC.isChecked() && responseEightE.isChecked() && !responseEightA.isChecked()
                         && !responseEightB.isChecked() && !responseEightD.isChecked() && !responseEightF.isChecked()) {
                     score = score + 1;
                 }
@@ -93,14 +94,14 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                 }
                 //Display the winner or the loser
-                String msg="";
+                String msg = "";
                 if (score >= 5) {
                     msg = getString(R.string.winner);
                 } else {
                     msg = getString(R.string.loser);
                 }
                 String scoreMessage = msg + "\n" + name + "\n" + getString(R.string.score) + " " + score;
-                Toast.makeText(getApplicationContext() , scoreMessage, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), scoreMessage, Toast.LENGTH_LONG).show();
                 final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.tada);
                 ring.start();
 
