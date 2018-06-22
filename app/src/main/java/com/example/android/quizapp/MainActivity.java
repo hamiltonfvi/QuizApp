@@ -33,15 +33,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Get a handle to all user interface elements
-        final Button button = (Button) findViewById(R.id.button_results);
-        final Button button2 = (Button) findViewById(R.id.button_reset);
-        quizPlayer = (EditText) findViewById(R.id.quiz_name);
-        questionThreeResponse = (EditText) findViewById((R.id.question_three_response));
-        
-        //Check for null prior to retrieving the value, set value == 0 if this field is empty
-        if (questionThreeResponse.getText() != null) {
-            questionThreeResponse.setText("0");
-        }
+        final Button button = findViewById(R.id.button_results);
+        final Button button2 = findViewById(R.id.button_reset);
+        quizPlayer = findViewById(R.id.quiz_name);
+        questionThreeResponse = findViewById((R.id.question_three_response));
 
         // Setup event handlers (result button)
         button.setOnClickListener(new View.OnClickListener() {
@@ -50,15 +45,20 @@ public class MainActivity extends AppCompatActivity {
 
                 // get the EditText value as string - this can be empty value
                 String response = questionThreeResponse.getText().toString().trim();
-
-                //Converting EditText to Int
-                //int finalResponse = Integer.parseInt(response);
                 int finalResponse = 0;
+
+                // check if the string is empty before parsing into Integer else it will throw exception
+                if (!(response.length() == 0 || response.equals(""))) {
+
+                    //Converting EditText to Int
+                    finalResponse = Integer.parseInt(response);
+                }
 
                 //One point for a corrected answer in question one
                 if (responseOneA.isChecked()) {
                     score = score + 1;
                 }
+
                 //One point for a corrected answer in question two
                 if (responseTwoB.isChecked()) {
                     score = score + 1;
@@ -67,37 +67,45 @@ public class MainActivity extends AppCompatActivity {
                 if (finalResponse == 3) {
                     score = score + 1;
                 }
+
                 //One point for a corrected answer in question four
                 if (responseFourB.isChecked() && responseFourE.isChecked() && !responseFourA.isChecked()
                         && !responseFourC.isChecked() && !responseFourD.isChecked() && !responseFourF.isChecked()) {
                     score = score + 1;
                 }
+
                 //One point for a corrected answer in question five
                 if (responseFiveA.isChecked() && responseFiveF.isChecked() && !responseFiveB.isChecked()
                         && !responseFiveC.isChecked() && !responseFiveD.isChecked() && !responseFiveE.isChecked()) {
                     score = score + 1;
                 }
+
                 //One point for a corrected answer in question six
                 if (responseSixD.isChecked()) {
                     score = score + 1;
                 }
+
                 //One point for a corrected answer in question seven
                 if (responseSevenC.isChecked()) {
                     score = score + 1;
                 }
+
                 //One point for a corrected answer in question eight
                 if (responseEightC.isChecked() && responseEightE.isChecked() && !responseEightA.isChecked()
                         && !responseEightB.isChecked() && !responseEightD.isChecked() && !responseEightF.isChecked()) {
                     score = score + 1;
                 }
+
                 //One point for a corrected answer in question nine
                 if (responseNineC.isChecked()) {
                     score = score + 1;
                 }
+
                 //One point for a corrected answer in question ten
                 if (responseTen.isChecked()) {
                     score = score + 1;
                 }
+
                 //Display the winner or the loser
                 String msg = "";
                 if (score >= 5) {
@@ -105,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     msg = getString(R.string.loser);
                 }
+
                 String scoreMessage = msg + "\n" + name + "\n" + getString(R.string.score) + " " + score;
                 Toast.makeText(getApplicationContext(), scoreMessage, Toast.LENGTH_LONG).show();
                 final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.tada);
@@ -126,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 quizPlayer.setText("");
 
                 //Resets response number three
-                questionThreeResponse.setText("0");
+                questionThreeResponse.setText("");
 
                 //Unchecked everything on this view
                 if (responseOneA.isChecked())
@@ -230,71 +239,71 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //initiate TextViews
-        questionOne = (TextView) findViewById(R.id.question_one);
-        questionTwo = (TextView) findViewById(R.id.question_two);
-        questionThree = (TextView) findViewById(R.id.question_three);
-        questionFour = (TextView) findViewById(R.id.question_four);
-        questionFive = (TextView) findViewById(R.id.question_five);
-        questionSix = (TextView) findViewById(R.id.question_six);
-        questionSeven = (TextView) findViewById(R.id.question_seven);
-        questionEight = (TextView) findViewById(R.id.question_eight);
-        questionNine = (TextView) findViewById(R.id.question_nine);
-        questionTen = (TextView) findViewById(R.id.question_ten);
+        questionOne = findViewById(R.id.question_one);
+        questionTwo = findViewById(R.id.question_two);
+        questionThree = findViewById(R.id.question_three);
+        questionFour = findViewById(R.id.question_four);
+        questionFive = findViewById(R.id.question_five);
+        questionSix = findViewById(R.id.question_six);
+        questionSeven = findViewById(R.id.question_seven);
+        questionEight = findViewById(R.id.question_eight);
+        questionNine = findViewById(R.id.question_nine);
+        questionTen = findViewById(R.id.question_ten);
 
         //initiate Checkboxes
-        responseOneA = (RadioButton) findViewById(R.id.question_one_response_a);
-        responseOneB = (RadioButton) findViewById(R.id.question_one_response_b);
-        responseOneC = (RadioButton) findViewById(R.id.question_one_response_c);
-        responseOneD = (RadioButton) findViewById(R.id.question_one_response_d);
-        responseOneE = (RadioButton) findViewById(R.id.question_one_response_e);
-        responseOneF = (RadioButton) findViewById(R.id.question_one_response_f);
+        responseOneA = findViewById(R.id.question_one_response_a);
+        responseOneB = findViewById(R.id.question_one_response_b);
+        responseOneC = findViewById(R.id.question_one_response_c);
+        responseOneD = findViewById(R.id.question_one_response_d);
+        responseOneE = findViewById(R.id.question_one_response_e);
+        responseOneF = findViewById(R.id.question_one_response_f);
 
-        responseTwoA = (RadioButton) findViewById(R.id.question_two_response_a);
-        responseTwoB = (RadioButton) findViewById(R.id.question_two_response_b);
-        responseTwoC = (RadioButton) findViewById(R.id.question_two_response_c);
-        responseTwoD = (RadioButton) findViewById(R.id.question_two_response_d);
-        responseTwoE = (RadioButton) findViewById(R.id.question_two_response_e);
-        responseTwoF = (RadioButton) findViewById(R.id.question_two_response_f);
+        responseTwoA = findViewById(R.id.question_two_response_a);
+        responseTwoB = findViewById(R.id.question_two_response_b);
+        responseTwoC = findViewById(R.id.question_two_response_c);
+        responseTwoD = findViewById(R.id.question_two_response_d);
+        responseTwoE = findViewById(R.id.question_two_response_e);
+        responseTwoF = findViewById(R.id.question_two_response_f);
 
-        responseFourA = (CheckBox) findViewById(R.id.question_four_response_a);
-        responseFourB = (CheckBox) findViewById(R.id.question_four_response_b);
-        responseFourC = (CheckBox) findViewById(R.id.question_four_response_c);
-        responseFourD = (CheckBox) findViewById(R.id.question_four_response_d);
-        responseFourE = (CheckBox) findViewById(R.id.question_four_response_e);
-        responseFourF = (CheckBox) findViewById(R.id.question_four_response_f);
+        responseFourA = findViewById(R.id.question_four_response_a);
+        responseFourB = findViewById(R.id.question_four_response_b);
+        responseFourC = findViewById(R.id.question_four_response_c);
+        responseFourD = findViewById(R.id.question_four_response_d);
+        responseFourE = findViewById(R.id.question_four_response_e);
+        responseFourF = findViewById(R.id.question_four_response_f);
 
-        responseFiveA = (CheckBox) findViewById(R.id.question_five_response_a);
-        responseFiveB = (CheckBox) findViewById(R.id.question_five_response_b);
-        responseFiveC = (CheckBox) findViewById(R.id.question_five_response_c);
-        responseFiveD = (CheckBox) findViewById(R.id.question_five_response_d);
-        responseFiveE = (CheckBox) findViewById(R.id.question_five_response_e);
-        responseFiveF = (CheckBox) findViewById(R.id.question_five_response_f);
+        responseFiveA = findViewById(R.id.question_five_response_a);
+        responseFiveB = findViewById(R.id.question_five_response_b);
+        responseFiveC = findViewById(R.id.question_five_response_c);
+        responseFiveD = findViewById(R.id.question_five_response_d);
+        responseFiveE = findViewById(R.id.question_five_response_e);
+        responseFiveF = findViewById(R.id.question_five_response_f);
 
-        responseSixA = (RadioButton) findViewById(R.id.question_six_response_a);
-        responseSixB = (RadioButton) findViewById(R.id.question_six_response_b);
-        responseSixC = (RadioButton) findViewById(R.id.question_six_response_c);
-        responseSixD = (RadioButton) findViewById(R.id.question_six_response_d);
-        responseSixE = (RadioButton) findViewById(R.id.question_six_response_e);
-        responseSixF = (RadioButton) findViewById(R.id.question_six_response_f);
+        responseSixA = findViewById(R.id.question_six_response_a);
+        responseSixB = findViewById(R.id.question_six_response_b);
+        responseSixC = findViewById(R.id.question_six_response_c);
+        responseSixD = findViewById(R.id.question_six_response_d);
+        responseSixE = findViewById(R.id.question_six_response_e);
+        responseSixF = findViewById(R.id.question_six_response_f);
 
-        responseSevenA = (RadioButton) findViewById(R.id.question_seven_response_a);
-        responseSevenB = (RadioButton) findViewById(R.id.question_seven_response_b);
-        responseSevenC = (RadioButton) findViewById(R.id.question_seven_response_c);
-        responseSevenD = (RadioButton) findViewById(R.id.question_seven_response_d);
+        responseSevenA = findViewById(R.id.question_seven_response_a);
+        responseSevenB = findViewById(R.id.question_seven_response_b);
+        responseSevenC = findViewById(R.id.question_seven_response_c);
+        responseSevenD = findViewById(R.id.question_seven_response_d);
 
-        responseEightA = (CheckBox) findViewById(R.id.question_eight_response_a);
-        responseEightB = (CheckBox) findViewById(R.id.question_eight_response_b);
-        responseEightC = (CheckBox) findViewById(R.id.question_eight_response_c);
-        responseEightD = (CheckBox) findViewById(R.id.question_eight_response_d);
-        responseEightE = (CheckBox) findViewById(R.id.question_eight_response_e);
-        responseEightF = (CheckBox) findViewById(R.id.question_eight_response_f);
+        responseEightA = findViewById(R.id.question_eight_response_a);
+        responseEightB = findViewById(R.id.question_eight_response_b);
+        responseEightC = findViewById(R.id.question_eight_response_c);
+        responseEightD = findViewById(R.id.question_eight_response_d);
+        responseEightE = findViewById(R.id.question_eight_response_e);
+        responseEightF = findViewById(R.id.question_eight_response_f);
 
-        responseNineA = (RadioButton) findViewById(R.id.question_nine_response_a);
-        responseNineB = (RadioButton) findViewById(R.id.question_nine_response_b);
-        responseNineC = (RadioButton) findViewById(R.id.question_nine_response_c);
-        responseNineD = (RadioButton) findViewById(R.id.question_nine_response_d);
+        responseNineA = findViewById(R.id.question_nine_response_a);
+        responseNineB = findViewById(R.id.question_nine_response_b);
+        responseNineC = findViewById(R.id.question_nine_response_c);
+        responseNineD = findViewById(R.id.question_nine_response_d);
 
         //initiate Switch
-        responseTen = (Switch) findViewById(R.id.question_ten_switch);
+        responseTen = findViewById(R.id.question_ten_switch);
     }
 }
